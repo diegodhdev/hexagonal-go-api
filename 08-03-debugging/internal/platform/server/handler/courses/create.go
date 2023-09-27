@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/08-03-debugging/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-03-debugging/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-03-debugging/kit/command"
+	mooc "github.com/diegodhdev/hexagonal-go-api/08-03-debugging/internal"
+	"github.com/diegodhdev/hexagonal-go-api/08-03-debugging/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/08-03-debugging/kit/command"
 	"github.com/gin-gonic/gin"
 )
 

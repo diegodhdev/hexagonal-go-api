@@ -3,8 +3,8 @@ package creating
 import (
 	"context"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/07-01-publishing-domain-events/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-01-publishing-domain-events/kit/event"
+	mooc "github.com/diegodhdev/hexagonal-go-api/07-01-publishing-domain-events/internal"
+	"github.com/diegodhdev/hexagonal-go-api/07-01-publishing-domain-events/kit/event"
 )
 
 // CourseService is the default CourseService interface

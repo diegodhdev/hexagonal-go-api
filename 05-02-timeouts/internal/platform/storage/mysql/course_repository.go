@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/internal"
+	mooc "github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/internal"
 	"github.com/huandu/go-sqlbuilder"
 )
 

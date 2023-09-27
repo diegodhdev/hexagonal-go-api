@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/02-03-controller-test/internal/platform/storage/storagemocks"
+	"github.com/diegodhdev/hexagonal-go-api/02-03-controller-test/internal/platform/storage/storagemocks"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

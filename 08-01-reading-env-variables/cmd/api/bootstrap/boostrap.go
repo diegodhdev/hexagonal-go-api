@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"time"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal/increasing"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal/platform/bus/inmemory"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal/platform/server"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal/platform/storage/mysql"
+	mooc "github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal/increasing"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal/platform/bus/inmemory"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal/platform/server"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/kelseyhightower/envconfig"
 )

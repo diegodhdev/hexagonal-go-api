@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/internal/platform/bus/inmemory"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/internal/platform/server"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/internal/platform/storage/mysql"
+	"github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/internal/platform/bus/inmemory"
+	"github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/internal/platform/server"
+	"github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 

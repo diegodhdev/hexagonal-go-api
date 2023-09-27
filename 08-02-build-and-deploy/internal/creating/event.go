@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/08-02-build-and-deploy/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-02-build-and-deploy/internal/increasing"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-02-build-and-deploy/kit/event"
+	mooc "github.com/diegodhdev/hexagonal-go-api/08-02-build-and-deploy/internal"
+	"github.com/diegodhdev/hexagonal-go-api/08-02-build-and-deploy/internal/increasing"
+	"github.com/diegodhdev/hexagonal-go-api/08-02-build-and-deploy/kit/event"
 )
 
 type IncreaseCoursesCounterOnCourseCreated struct {

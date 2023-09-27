@@ -3,8 +3,8 @@ package creating
 import (
 	"context"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-01-reading-env-variables/kit/event"
+	mooc "github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/internal"
+	"github.com/diegodhdev/hexagonal-go-api/08-01-reading-env-variables/kit/event"
 )
 
 // CourseService is the default CourseService interface

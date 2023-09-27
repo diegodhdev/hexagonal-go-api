@@ -3,7 +3,7 @@ package inmemory
 import (
 	"context"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-03-debugging/kit/event"
+	"github.com/diegodhdev/hexagonal-go-api/08-03-debugging/kit/event"
 )
 
 // EventBus is an in-memory implementation of the event.Bus.

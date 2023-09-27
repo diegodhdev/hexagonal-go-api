@@ -9,11 +9,11 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal/platform/server/handler/courses"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal/platform/server/handler/health"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal/platform/server/middleware/logging"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal/platform/server/middleware/recovery"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/kit/command"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal/platform/server/handler/courses"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal/platform/server/handler/health"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal/platform/server/middleware/logging"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal/platform/server/middleware/recovery"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/kit/command"
 	"github.com/gin-gonic/gin"
 )
 

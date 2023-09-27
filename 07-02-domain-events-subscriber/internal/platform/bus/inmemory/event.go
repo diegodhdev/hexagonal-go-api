@@ -3,7 +3,7 @@ package inmemory
 import (
 	"context"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/kit/event"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/kit/event"
 )
 
 // EventBus is an in-memory implementation of the event.Bus.
@@ -43,12 +43,3 @@ func (b *EventBus) Subscribe(evtType event.Type, handler event.Handler) {
 
 	subscribersForType = append(subscribersForType, handler)
 }
-
-
-
-
-
-
-
-
-

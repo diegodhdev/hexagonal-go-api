@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/05-01-graceful-shutdown/internal"
+	mooc "github.com/diegodhdev/hexagonal-go-api/05-01-graceful-shutdown/internal"
 	"github.com/huandu/go-sqlbuilder"
 )
 

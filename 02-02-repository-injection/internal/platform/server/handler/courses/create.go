@@ -3,7 +3,7 @@ package courses
 import (
 	"net/http"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/02-02-repository-injection/internal"
+	mooc "github.com/diegodhdev/hexagonal-go-api/02-02-repository-injection/internal"
 	"github.com/gin-gonic/gin"
 )
 

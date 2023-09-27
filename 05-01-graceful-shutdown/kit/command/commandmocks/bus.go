@@ -5,7 +5,7 @@ package commandmocks
 import (
 	context "context"
 
-	command "github.com/CodelyTV/go-hexagonal_http_api-course/05-01-graceful-shutdown/kit/command"
+	command "github.com/diegodhdev/hexagonal-go-api/05-01-graceful-shutdown/kit/command"
 
 	mock "github.com/stretchr/testify/mock"
 )

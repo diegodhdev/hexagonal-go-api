@@ -1,4 +1,4 @@
-module github.com/CodelyTV/go-hexagonal_http_api-course
+module github.com/diegodhdev/hexagonal-go-api
 
 go 1.15
 

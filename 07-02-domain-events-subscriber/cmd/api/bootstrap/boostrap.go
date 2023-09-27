@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"time"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal/increasing"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal/platform/bus/inmemory"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal/platform/server"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/internal/platform/storage/mysql"
+	mooc "github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal/increasing"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal/platform/bus/inmemory"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal/platform/server"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 

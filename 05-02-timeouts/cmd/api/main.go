@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-02-timeouts/cmd/api/bootstrap"
+	"github.com/diegodhdev/hexagonal-go-api/05-02-timeouts/cmd/api/bootstrap"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package creating
 import (
 	"context"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal"
+	mooc "github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal"
 )
 
 // CourseService is the default CourseService interface

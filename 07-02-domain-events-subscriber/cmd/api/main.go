@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-02-domain-events-subscriber/cmd/api/bootstrap"
+	"github.com/diegodhdev/hexagonal-go-api/07-02-domain-events-subscriber/cmd/api/bootstrap"
 )
 
 func main() {

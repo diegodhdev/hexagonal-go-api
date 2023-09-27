@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-01-application-service/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-01-application-service/internal/platform/server"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-01-application-service/internal/platform/storage/mysql"
+	"github.com/diegodhdev/hexagonal-go-api/04-01-application-service/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/04-01-application-service/internal/platform/server"
+	"github.com/diegodhdev/hexagonal-go-api/04-01-application-service/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 

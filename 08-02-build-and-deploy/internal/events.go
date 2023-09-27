@@ -1,7 +1,7 @@
 package mooc
 
 import (
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-02-build-and-deploy/kit/event"
+	"github.com/diegodhdev/hexagonal-go-api/08-02-build-and-deploy/kit/event"
 )
 
 const CourseCreatedEventType event.Type = "events.course.created"

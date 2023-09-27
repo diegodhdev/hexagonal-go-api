@@ -1,6 +1,6 @@
 package bootstrap
 
-import "github.com/CodelyTV/go-hexagonal_http_api-course/01-03-architectured-healthcheck/internal/platform/server"
+import "github.com/diegodhdev/hexagonal-go-api/01-03-architectured-healthcheck/internal/platform/server"
 
 const (
 	host = "localhost"

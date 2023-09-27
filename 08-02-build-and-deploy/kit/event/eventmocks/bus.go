@@ -5,7 +5,7 @@ package eventmocks
 import (
 	context "context"
 
-	event "github.com/CodelyTV/go-hexagonal_http_api-course/08-02-build-and-deploy/kit/event"
+	event "github.com/diegodhdev/hexagonal-go-api/08-02-build-and-deploy/kit/event"
 	mock "github.com/stretchr/testify/mock"
 )
 

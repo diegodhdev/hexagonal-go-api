@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/01-03-architectured-healthcheck/cmd/api/bootstrap"
+	"github.com/diegodhdev/hexagonal-go-api/01-03-architectured-healthcheck/cmd/api/bootstrap"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/02-01-post-course-endpoint/internal/platform/server/handler/courses"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/02-01-post-course-endpoint/internal/platform/server/handler/health"
+	"github.com/diegodhdev/hexagonal-go-api/02-01-post-course-endpoint/internal/platform/server/handler/courses"
+	"github.com/diegodhdev/hexagonal-go-api/02-01-post-course-endpoint/internal/platform/server/handler/health"
 	"github.com/gin-gonic/gin"
 )
 

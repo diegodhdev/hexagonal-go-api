@@ -3,7 +3,7 @@ package inmemory
 import (
 	"context"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/08-03-debugging/kit/command"
+	"github.com/diegodhdev/hexagonal-go-api/08-03-debugging/kit/command"
 )
 
 // CommandBus is an in-memory implementation of the command.Bus.

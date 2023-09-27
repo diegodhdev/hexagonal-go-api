@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/kit/command"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/kit/command"
 )
 
 // CommandBus is an in-memory implementation of the command.Bus.

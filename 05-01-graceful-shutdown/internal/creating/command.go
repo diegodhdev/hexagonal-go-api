@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/05-01-graceful-shutdown/kit/command"
+	"github.com/diegodhdev/hexagonal-go-api/05-01-graceful-shutdown/kit/command"
 )
 
 const CourseCommandType command.Type = "command.creating.course"

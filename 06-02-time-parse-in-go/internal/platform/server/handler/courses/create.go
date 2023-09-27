@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-02-time-parse-in-go/kit/command"
+	mooc "github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/06-02-time-parse-in-go/kit/command"
 	"github.com/gin-gonic/gin"
 )
 

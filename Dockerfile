@@ -1,7 +1,7 @@
 FROM golang:alpine AS build
 
 RUN apk add --update git
-WORKDIR /go/src/github.com/CodelyTV/go-hexagonal_http_api-course
+WORKDIR /go/src/github.com/diegodhdev/hexagonal-go-api
 COPY . .
 RUN CGO_ENABLED=0 go build -o /go/bin/codelytv-mooc-api 08-03-debugging/cmd/api/main.go
 

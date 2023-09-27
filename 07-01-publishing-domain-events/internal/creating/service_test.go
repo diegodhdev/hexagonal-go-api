@@ -5,8 +5,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-01-publishing-domain-events/internal/platform/storage/storagemocks"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/07-01-publishing-domain-events/kit/event/eventmocks"
+	"github.com/diegodhdev/hexagonal-go-api/07-01-publishing-domain-events/internal/platform/storage/storagemocks"
+	"github.com/diegodhdev/hexagonal-go-api/07-01-publishing-domain-events/kit/event/eventmocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

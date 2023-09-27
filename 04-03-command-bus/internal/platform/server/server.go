@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-03-command-bus/internal/platform/server/handler/courses"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-03-command-bus/internal/platform/server/handler/health"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/04-03-command-bus/kit/command"
+	"github.com/diegodhdev/hexagonal-go-api/04-03-command-bus/internal/platform/server/handler/courses"
+	"github.com/diegodhdev/hexagonal-go-api/04-03-command-bus/internal/platform/server/handler/health"
+	"github.com/diegodhdev/hexagonal-go-api/04-03-command-bus/kit/command"
 	"github.com/gin-gonic/gin"
 )
 

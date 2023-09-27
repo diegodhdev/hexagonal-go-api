@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/06-03-gin-middlewares/internal"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-03-gin-middlewares/internal/creating"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/06-03-gin-middlewares/kit/command"
+	mooc "github.com/diegodhdev/hexagonal-go-api/06-03-gin-middlewares/internal"
+	"github.com/diegodhdev/hexagonal-go-api/06-03-gin-middlewares/internal/creating"
+	"github.com/diegodhdev/hexagonal-go-api/06-03-gin-middlewares/kit/command"
 	"github.com/gin-gonic/gin"
 )
 

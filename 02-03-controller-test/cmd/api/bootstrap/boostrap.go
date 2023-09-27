@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/CodelyTV/go-hexagonal_http_api-course/02-03-controller-test/internal/platform/server"
-	"github.com/CodelyTV/go-hexagonal_http_api-course/02-03-controller-test/internal/platform/storage/mysql"
+	"github.com/diegodhdev/hexagonal-go-api/02-03-controller-test/internal/platform/server"
+	"github.com/diegodhdev/hexagonal-go-api/02-03-controller-test/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 

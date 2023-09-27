@@ -5,7 +5,7 @@ package storagemocks
 import (
 	context "context"
 
-	mooc "github.com/CodelyTV/go-hexagonal_http_api-course/05-01-graceful-shutdown/internal"
+	mooc "github.com/diegodhdev/hexagonal-go-api/05-01-graceful-shutdown/internal"
 	mock "github.com/stretchr/testify/mock"
 )
 
