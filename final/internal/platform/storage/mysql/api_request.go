@@ -1,7 +1,7 @@
 package mysql
 
 const (
-	sqlApiRequestTable = "api_requests"
+	sqlApiRequestTable = "requests"
 )
 
 type sqlApiRequest struct {

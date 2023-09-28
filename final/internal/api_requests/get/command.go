@@ -3,7 +3,6 @@ package get
 import (
 	"context"
 	"errors"
-
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 )
 
