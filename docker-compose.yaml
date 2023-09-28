@@ -4,12 +4,12 @@ services:
   mooc-api:
     build: .
     environment:
-      MOOC_HOST: 0.0.0.0
+      MOOC_HOST: 127.0.0.1
       MOOC_DBHOST: mysql
     ports:
-      - 8080:8080
+      - 8081:8080
 
-  mysql:
+  mysql_2:
     image: mysql:8.0.22
     volumes:
       - mysql_data:/var/lib/mysql
@@ -19,6 +19,7 @@ services:
       MYSQL_USER: codely
       MYSQL_PASSWORD: codely
       MYSQL_ROOT_PASSWORD: codely
-
+    ports:
+      - 3308:3306
 volumes:
   mysql_data:

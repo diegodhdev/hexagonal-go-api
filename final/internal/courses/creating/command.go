@@ -16,6 +16,12 @@ type CourseCommand struct {
 	duration string
 }
 
+// RequestCommand is the command dispatched to create a new course.
+type RequestCommand struct {
+	name     string
+	duration string
+}
+
 // NewCourseCommand creates a new CourseCommand.
 func NewCourseCommand(id, name, duration string) CourseCommand {
 	return CourseCommand{

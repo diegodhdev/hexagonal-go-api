@@ -22,7 +22,6 @@ func Middleware() gin.HandlerFunc {
 
 		// Process request
 		c.Next()
-
 		// Results
 		timestamp := time.Now()
 		latency := timestamp.Sub(start)

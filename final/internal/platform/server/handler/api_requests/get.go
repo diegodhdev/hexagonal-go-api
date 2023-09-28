@@ -1,39 +1,40 @@
-package courses
+package api_requests
 
 import (
 	"errors"
+	"fmt"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/api_requests/get"
 	"net/http"
 
 	mooc "github.com/diegodhdev/hexagonal-go-api/final/internal"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/courses/creating"
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 	"github.com/gin-gonic/gin"
 )
 
 type createRequest struct {
-	ID       string `json:"id" binding:"required"`
-	Name     string `json:"name" binding:"required"`
-	Duration string `json:"duration" binding:"required"`
+	ID string `json:"id" binding:"required"`
 }
 
-// CreateHandler returns an HTTP handler for courses creation.
-func CreateHandler(commandBus command.Bus) gin.HandlerFunc {
+// GetHandler returns an HTTP handler for courses creation.
+func GetHandler(commandBus command.Bus) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
+
 		var req createRequest
+
 		if err := ctx.BindJSON(&req); err != nil {
+			fmt.Println(err.Error())
 			ctx.JSON(http.StatusBadRequest, err.Error())
 			return
 		}
 
-		err := commandBus.Dispatch(ctx, creating.NewCourseCommand(
+		err := commandBus.Dispatch(ctx, get.NewApiRequestCommand(
 			req.ID,
-			req.Name,
-			req.Duration,
+			"cacac",
 		))
 
 		if err != nil {
 			switch {
-			case errors.Is(err, mooc.ErrInvalidCourseID),
+			case errors.Is(err, mooc.ErrInvalidApiRequestID),
 				errors.Is(err, mooc.ErrEmptyCourseName), errors.Is(err, mooc.ErrInvalidCourseID):
 				ctx.JSON(http.StatusBadRequest, err.Error())
 				return

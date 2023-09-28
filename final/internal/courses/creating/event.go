@@ -3,9 +3,9 @@ package creating
 import (
 	"context"
 	"errors"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/courses/increasing"
 
 	mooc "github.com/diegodhdev/hexagonal-go-api/final/internal"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/increasing"
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/event"
 )
 

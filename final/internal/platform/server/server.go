@@ -3,6 +3,8 @@ package server
 import (
 	"context"
 	"fmt"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/api_requests"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/test"
 	"log"
 	"net/http"
 	"os"
@@ -42,14 +44,21 @@ func New(ctx context.Context, host string, port uint, shutdownTimeout time.Durat
 }
 
 func (s *Server) registerRoutes() {
+
 	s.engine.Use(recovery.Middleware(), logging.Middleware())
 
 	s.engine.GET("/health", health.CheckHandler())
+
+	s.engine.GET("/test", test.TestHandler())
+
 	s.engine.POST("/courses", courses.CreateHandler(s.commandBus))
+	s.engine.POST("/requests", api_requests.GetHandler(s.commandBus))
 }
 
 func (s *Server) Run(ctx context.Context) error {
 	log.Println("Server running on", s.httpAddr)
+
+	fmt.Println(s.commandBus)
 
 	srv := &http.Server{
 		Addr:    s.httpAddr,

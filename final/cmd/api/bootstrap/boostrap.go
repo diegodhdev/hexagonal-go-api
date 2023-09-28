@@ -6,17 +6,15 @@ import (
 	"fmt"
 	"time"
 
-	mooc "github.com/diegodhdev/hexagonal-go-api/final/internal"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/creating"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/increasing"
 	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/bus/inmemory"
 	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/storage/mysql"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/kelseyhightower/envconfig"
 )
 
 func Run() error {
+
+	fmt.Println("bootstrap.go > Run()")
 	var cfg config
 	err := envconfig.Process("MOOC", &cfg)
 	if err != nil {
@@ -34,18 +32,11 @@ func Run() error {
 		eventBus   = inmemory.NewEventBus()
 	)
 
-	courseRepository := mysql.NewCourseRepository(db, cfg.DbTimeout)
+	// Loading Courses Bootstrapping
+	coursesBootstrapping(db, cfg, eventBus, commandBus)
 
-	creatingCourseService := creating.NewCourseService(courseRepository, eventBus)
-	increasingCourseService := increasing.NewCourseCounterService()
-
-	createCourseCommandHandler := creating.NewCourseCommandHandler(creatingCourseService)
-	commandBus.Register(creating.CourseCommandType, createCourseCommandHandler)
-
-	eventBus.Subscribe(
-		mooc.CourseCreatedEventType,
-		creating.NewIncreaseCoursesCounterOnCourseCreated(increasingCourseService),
-	)
+	// Loading Api Requests Bootstrapping
+	apiRequestsBootsrapping(db, cfg, eventBus, commandBus)
 
 	ctx, srv := server.New(context.Background(), cfg.Host, cfg.Port, cfg.ShutdownTimeout, commandBus)
 	return srv.Run(ctx)
@@ -60,7 +51,7 @@ type config struct {
 	DbUser    string        `default:"codely"`
 	DbPass    string        `default:"codely"`
 	DbHost    string        `default:"localhost"`
-	DbPort    uint          `default:"3306"`
+	DbPort    uint          `default:"3308"`
 	DbName    string        `default:"codely"`
 	DbTimeout time.Duration `default:"5s"`
 }

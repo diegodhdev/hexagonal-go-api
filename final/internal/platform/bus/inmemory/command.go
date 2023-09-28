@@ -2,6 +2,7 @@ package inmemory
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 )
@@ -30,5 +31,8 @@ func (b *CommandBus) Dispatch(ctx context.Context, cmd command.Command) error {
 
 // Register implements the command.Bus interface.
 func (b *CommandBus) Register(cmdType command.Type, handler command.Handler) {
+
+	fmt.Println(cmdType)
+	fmt.Println(handler)
 	b.handlers[cmdType] = handler
 }
