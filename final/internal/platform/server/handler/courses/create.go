@@ -16,16 +16,19 @@ type createRequest struct {
 	Duration string `json:"duration" binding:"required"`
 }
 
+var data command.DataResponse
+
 // CreateHandler returns an HTTP handler for courses creation.
 func CreateHandler(commandBus command.Bus) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
+
 		var req createRequest
 		if err := ctx.BindJSON(&req); err != nil {
 			ctx.JSON(http.StatusBadRequest, err.Error())
 			return
 		}
 
-		err := commandBus.Dispatch(ctx, creating.NewCourseCommand(
+		_, err := commandBus.Dispatch(data, ctx, creating.NewCourseCommand(
 			req.ID,
 			req.Name,
 			req.Duration,

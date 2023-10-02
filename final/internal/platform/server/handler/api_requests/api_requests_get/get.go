@@ -1,4 +1,4 @@
-package api_requests
+package api_requests_get
 
 import (
 	"errors"
@@ -15,6 +15,8 @@ type createRequest struct {
 	ID string `json:"id" binding:"required"`
 }
 
+var data command.DataResponse
+
 // GetHandler returns an HTTP handler for courses creation.
 func GetHandler(commandBus command.Bus) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
@@ -27,7 +29,7 @@ func GetHandler(commandBus command.Bus) gin.HandlerFunc {
 			return
 		}
 
-		err := commandBus.Dispatch(ctx, get.NewApiRequestCommand(
+		_, err := commandBus.Dispatch(data, ctx, get.NewApiRequestCommand(
 			req.ID,
 			"cacac",
 		))

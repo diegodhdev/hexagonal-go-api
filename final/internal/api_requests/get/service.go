@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	mooc "github.com/diegodhdev/hexagonal-go-api/final/internal"
+	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/event"
 )
 
@@ -23,17 +24,17 @@ func NewApiRequestService(apiRequestRepository mooc.ApiRequestRepository, eventB
 }
 
 // GetApiRequest implements the get.GetApiRequest interface.
-func (s ApiRequestService) GetApiRequest(ctx context.Context, id string, tag string) error {
+func (s ApiRequestService) GetApiRequest(data command.DataResponse, ctx context.Context, id string, tag string) (command.DataResponse, error) {
 	apiRequest, err := mooc.NewApiRequest(id)
 	if err != nil {
-		return err
+		return data, err
 	}
 
 	if err := s.apiRequestRepository.Save(ctx, apiRequest); err != nil {
-		return err
+		return data, err
 	}
 	fmt.Println(tag)
 	fmt.Println(apiRequest.PullEvents())
 
-	return s.eventBus.Publish(ctx, apiRequest.PullEvents())
+	return data, s.eventBus.Publish(ctx, apiRequest.PullEvents())
 }

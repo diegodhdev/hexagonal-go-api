@@ -38,6 +38,9 @@ func Run() error {
 	// Loading Api Requests Bootstrapping
 	apiRequestsBootsrapping(db, cfg, eventBus, commandBus)
 
+	// Loading Api Requests Fake Story Api Bootstrapping
+	apiRequestsFakeStoryApiBootsrapping(db, cfg, eventBus, commandBus)
+
 	ctx, srv := server.New(context.Background(), cfg.Host, cfg.Port, cfg.ShutdownTimeout, commandBus)
 	return srv.Run(ctx)
 }

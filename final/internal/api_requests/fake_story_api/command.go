@@ -1,4 +1,4 @@
-package get
+package fake_story_api
 
 import (
 	"context"
@@ -6,12 +6,27 @@ import (
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 )
 
-const ApiRequestCommandType command.Type = "command.get.apiRequest"
+const ApiRequestCommandType command.Type = "command.fake_story_api.apiRequest"
 
-// ApiRequestCommand is the command dispatched to create a new apiRequest.
+var data command.DataResponse
+
 type ApiRequestCommand struct {
-	id  string
-	tag string
+	// json tag to de-serialize json body
+	ID       string    `json:"ID"`
+	Api      string    `json:"api"`
+	Mode     string    `json:"mode"`
+	Response string    `json:"response"`
+	Requests []Request `json:"requests"`
+}
+
+type Request struct {
+	// json tag to de-serialize json body
+	Url        string     `json:"url"`
+	Credential Credential `json:"credential"`
+}
+
+type Credential struct {
+	Token string `json:"token"`
 }
 
 // RequestCommand is the command dispatched to create a new apiRequest.
@@ -20,10 +35,13 @@ type RequestCommand struct {
 }
 
 // NewApiRequestCommand creates a new ApiRequestCommand.
-func NewApiRequestCommand(id string, tag string) ApiRequestCommand {
+func NewApiRequestCommand(id string, api string, mode string, response string, requests []Request) ApiRequestCommand {
 	return ApiRequestCommand{
-		id:  id,
-		tag: tag,
+		ID:       id,
+		Api:      api,
+		Mode:     mode,
+		Response: response,
+		Requests: requests,
 	}
 }
 
@@ -47,14 +65,18 @@ func NewApiRequestCommandHandler(service ApiRequestService) ApiRequestCommandHan
 // Handle implements the command.Handler interface.
 func (h ApiRequestCommandHandler) Handle(data command.DataResponse, ctx context.Context, cmd command.Command) (command.DataResponse, error) {
 	getApiRequestCmd, ok := cmd.(ApiRequestCommand)
+
 	if !ok {
 		return data, errors.New("unexpected command")
 	}
 
-	return h.service.GetApiRequest(
+	return h.service.FakeStoryApiApiRequest(
 		data,
 		ctx,
-		getApiRequestCmd.id,
-		getApiRequestCmd.tag,
+		getApiRequestCmd.ID,
+		getApiRequestCmd.Api,
+		getApiRequestCmd.Mode,
+		getApiRequestCmd.Response,
+		getApiRequestCmd.Requests,
 	)
 }

@@ -15,6 +15,7 @@ func coursesBootstrapping(db *sql.DB, cfg config, eventBus *inmemory.EventBus, c
 	creatingCourseService := creating.NewCourseService(courseRepository, eventBus)
 	increasingCourseService := increasing.NewCourseCounterService()
 	createCourseCommandHandler := creating.NewCourseCommandHandler(creatingCourseService)
+
 	commandBus.Register(creating.CourseCommandType, createCourseCommandHandler)
 	eventBus.Subscribe(
 		mooc.CourseCreatedEventType,

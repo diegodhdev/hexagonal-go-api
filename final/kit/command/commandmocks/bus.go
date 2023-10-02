@@ -15,7 +15,7 @@ type Bus struct {
 }
 
 // Dispatch provides a mock function with given fields: _a0, _a1
-func (_m *Bus) Dispatch(_a0 context.Context, _a1 command.Command) error {
+func (_m *Bus) Dispatch(data command.DataResponse, _a0 context.Context, _a1 command.Command) (command.DataResponse, error) {
 	ret := _m.Called(_a0, _a1)
 
 	var r0 error
@@ -25,10 +25,10 @@ func (_m *Bus) Dispatch(_a0 context.Context, _a1 command.Command) error {
 		r0 = ret.Error(0)
 	}
 
-	return r0
+	return data, r0
 }
 
 // Register provides a mock function with given fields: _a0, _a1
-func (_m *Bus) Register(_a0 command.Type, _a1 command.Handler) {
+func (_m *Bus) Register(data command.DataResponse, _a0 command.Type, _a1 command.Handler) {
 	_m.Called(_a0, _a1)
 }

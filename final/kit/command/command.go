@@ -1,11 +1,24 @@
 package command
 
-import "context"
+import (
+	"context"
+)
+
+type DataResponse struct {
+	data string
+}
+
+func NewDataResponse(value string) DataResponse {
+
+	return DataResponse{
+		data: value,
+	}
+}
 
 // Bus defines the expected behaviour from a command bus.
 type Bus interface {
 	// Dispatch is the method used to dispatch new commands.
-	Dispatch(context.Context, Command) error
+	Dispatch(DataResponse, context.Context, Command) (DataResponse, error)
 	// Register is the method used to register a new command handler.
 	Register(Type, Handler)
 }
@@ -22,5 +35,5 @@ type Command interface {
 
 // Handler defines the expected behaviour from a command handler.
 type Handler interface {
-	Handle(context.Context, Command) error
+	Handle(DataResponse, context.Context, Command) (DataResponse, error)
 }

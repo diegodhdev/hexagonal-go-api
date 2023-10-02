@@ -3,7 +3,8 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/api_requests"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/api_requests/api_requests_fake_story_api"
+	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/api_requests/api_requests_get"
 	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/server/handler/test"
 	"log"
 	"net/http"
@@ -52,7 +53,8 @@ func (s *Server) registerRoutes() {
 	s.engine.GET("/test", test.TestHandler())
 
 	s.engine.POST("/courses", courses.CreateHandler(s.commandBus))
-	s.engine.POST("/requests", api_requests.GetHandler(s.commandBus))
+	s.engine.POST("/requests", api_requests_get.GetHandler(s.commandBus))
+	s.engine.POST("/requests/fake-story-api", api_requests_fake_story_api.FakeStoryApiHandler(s.commandBus))
 }
 
 func (s *Server) Run(ctx context.Context) error {
