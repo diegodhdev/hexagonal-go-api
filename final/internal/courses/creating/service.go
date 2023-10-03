@@ -2,9 +2,8 @@ package creating
 
 import (
 	"context"
-	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
-
 	mooc "github.com/diegodhdev/hexagonal-go-api/final/internal"
+	"github.com/diegodhdev/hexagonal-go-api/final/kit/command"
 	"github.com/diegodhdev/hexagonal-go-api/final/kit/event"
 )
 
@@ -24,15 +23,15 @@ func NewCourseService(courseRepository mooc.CourseRepository, eventBus event.Bus
 }
 
 // CreateCourse implements the creating.CourseService interface.
-func (s CourseService) CreateCourse(data command.DataResponse, ctx context.Context, id, name, duration string) (command.DataResponse, error) {
+func (s CourseService) CreateCourse(ctx context.Context, id, name, duration string) (any, error) {
 	course, err := mooc.NewCourse(id, name, duration)
 	if err != nil {
-		return data, err
+		return command.NewEmptyDataResponse(), err
 	}
 
 	if err := s.courseRepository.Save(ctx, course); err != nil {
-		return data, err
+		return command.NewEmptyDataResponse(), err
 	}
 
-	return data, s.eventBus.Publish(ctx, course.PullEvents())
+	return command.NewEmptyDataResponse(), s.eventBus.Publish(ctx, course.PullEvents())
 }

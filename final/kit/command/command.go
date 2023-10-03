@@ -8,17 +8,15 @@ type DataResponse struct {
 	data string
 }
 
-func NewDataResponse(value string) DataResponse {
+func NewEmptyDataResponse() any {
 
-	return DataResponse{
-		data: value,
-	}
+	return DataResponse{}
 }
 
 // Bus defines the expected behaviour from a command bus.
 type Bus interface {
 	// Dispatch is the method used to dispatch new commands.
-	Dispatch(DataResponse, context.Context, Command) (DataResponse, error)
+	Dispatch(context.Context, Command) (any, error)
 	// Register is the method used to register a new command handler.
 	Register(Type, Handler)
 }
@@ -35,5 +33,5 @@ type Command interface {
 
 // Handler defines the expected behaviour from a command handler.
 type Handler interface {
-	Handle(DataResponse, context.Context, Command) (DataResponse, error)
+	Handle(context.Context, Command) (any, error)
 }

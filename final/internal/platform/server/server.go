@@ -60,8 +60,6 @@ func (s *Server) registerRoutes() {
 func (s *Server) Run(ctx context.Context) error {
 	log.Println("Server running on", s.httpAddr)
 
-	fmt.Println(s.commandBus)
-
 	srv := &http.Server{
 		Addr:    s.httpAddr,
 		Handler: s.engine,

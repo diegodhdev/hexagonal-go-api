@@ -63,15 +63,14 @@ func NewApiRequestCommandHandler(service ApiRequestService) ApiRequestCommandHan
 }
 
 // Handle implements the command.Handler interface.
-func (h ApiRequestCommandHandler) Handle(data command.DataResponse, ctx context.Context, cmd command.Command) (command.DataResponse, error) {
+func (h ApiRequestCommandHandler) Handle(ctx context.Context, cmd command.Command) (any, error) {
 	getApiRequestCmd, ok := cmd.(ApiRequestCommand)
 
 	if !ok {
-		return data, errors.New("unexpected command")
+		return command.NewEmptyDataResponse(), errors.New("unexpected command")
 	}
 
 	return h.service.FakeStoryApiApiRequest(
-		data,
 		ctx,
 		getApiRequestCmd.ID,
 		getApiRequestCmd.Api,

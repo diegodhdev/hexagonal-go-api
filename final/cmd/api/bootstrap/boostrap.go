@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	filesystem2 "github.com/diegodhdev/hexagonal-go-api/final/internal/platform/storage/filesystem"
 	"time"
 
 	"github.com/diegodhdev/hexagonal-go-api/final/internal/platform/bus/inmemory"
@@ -14,7 +15,6 @@ import (
 
 func Run() error {
 
-	fmt.Println("bootstrap.go > Run()")
 	var cfg config
 	err := envconfig.Process("MOOC", &cfg)
 	if err != nil {
@@ -28,8 +28,9 @@ func Run() error {
 	}
 
 	var (
-		commandBus = inmemory.NewCommandBus()
-		eventBus   = inmemory.NewEventBus()
+		commandBus       = inmemory.NewCommandBus()
+		eventBus         = inmemory.NewEventBus()
+		customFilesystem = filesystem2.NewFilesystem("/home/diego/GolandProjects/hexagonal-go-api/final/storage/")
 	)
 
 	// Loading Courses Bootstrapping
@@ -39,7 +40,7 @@ func Run() error {
 	apiRequestsBootsrapping(db, cfg, eventBus, commandBus)
 
 	// Loading Api Requests Fake Story Api Bootstrapping
-	apiRequestsFakeStoryApiBootsrapping(db, cfg, eventBus, commandBus)
+	apiRequestsFakeStoryApiBootsrapping(db, cfg, eventBus, commandBus, customFilesystem)
 
 	ctx, srv := server.New(context.Background(), cfg.Host, cfg.Port, cfg.ShutdownTimeout, commandBus)
 	return srv.Run(ctx)

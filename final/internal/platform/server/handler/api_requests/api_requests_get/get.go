@@ -2,7 +2,6 @@ package api_requests_get
 
 import (
 	"errors"
-	"fmt"
 	"github.com/diegodhdev/hexagonal-go-api/final/internal/api_requests/get"
 	"net/http"
 
@@ -24,12 +23,11 @@ func GetHandler(commandBus command.Bus) gin.HandlerFunc {
 		var req createRequest
 
 		if err := ctx.BindJSON(&req); err != nil {
-			fmt.Println(err.Error())
 			ctx.JSON(http.StatusBadRequest, err.Error())
 			return
 		}
 
-		_, err := commandBus.Dispatch(data, ctx, get.NewApiRequestCommand(
+		_, err := commandBus.Dispatch(ctx, get.NewApiRequestCommand(
 			req.ID,
 			"cacac",
 		))

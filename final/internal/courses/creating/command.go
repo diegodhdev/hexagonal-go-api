@@ -49,14 +49,13 @@ func NewCourseCommandHandler(service CourseService) CourseCommandHandler {
 }
 
 // Handle implements the command.Handler interface.
-func (h CourseCommandHandler) Handle(data command.DataResponse, ctx context.Context, cmd command.Command) (command.DataResponse, error) {
+func (h CourseCommandHandler) Handle(ctx context.Context, cmd command.Command) (any, error) {
 	createCourseCmd, ok := cmd.(CourseCommand)
 	if !ok {
-		return data, errors.New("unexpected command")
+		return command.NewEmptyDataResponse(), errors.New("unexpected command")
 	}
 
 	return h.service.CreateCourse(
-		data,
 		ctx,
 		createCourseCmd.id,
 		createCourseCmd.name,

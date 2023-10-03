@@ -28,7 +28,7 @@ func CreateHandler(commandBus command.Bus) gin.HandlerFunc {
 			return
 		}
 
-		_, err := commandBus.Dispatch(data, ctx, creating.NewCourseCommand(
+		_, err := commandBus.Dispatch(ctx, creating.NewCourseCommand(
 			req.ID,
 			req.Name,
 			req.Duration,
