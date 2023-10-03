@@ -89,6 +89,12 @@ type FakeStoryApi struct {
 	Price       float32 `json:"price"`
 	Category    string  `json:"category"`
 	Image       string  `json:"image"`
+	Rating      Rate    `json:"rating"`
+}
+
+type Rate struct {
+	Rate  float32 `json:"rate"`
+	Count int     `json:"count"`
 }
 
 type ProductFakeStoryApiDataResponse struct {
