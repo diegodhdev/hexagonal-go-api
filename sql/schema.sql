@@ -11,7 +11,11 @@ CREATE TABLE courses
 
 CREATE TABLE requests
 (
-    id       VARCHAR(255) NOT NULL,
+    id            VARCHAR(255) NOT NULL,
+    api           varchar(60)  NOT NULL,
+    mode          varchar(32)  NOT NULL,
+    response_type varchar(32)  NOT NULL,
+    body          JSON DEFAULT NULL,
 
     PRIMARY KEY (id)
 
