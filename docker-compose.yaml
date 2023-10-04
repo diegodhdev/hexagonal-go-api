@@ -15,10 +15,10 @@ services:
       - mysql_data:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_DATABASE: codely
-      MYSQL_USER: codely
-      MYSQL_PASSWORD: codely
-      MYSQL_ROOT_PASSWORD: codely
+      MYSQL_DATABASE: go-api
+      MYSQL_USER: go-api
+      MYSQL_PASSWORD: go-api
+      MYSQL_ROOT_PASSWORD: go-api
     ports:
       - 3308:3306
 volumes:
