@@ -25,7 +25,7 @@ func Test_CourseService_CreateCourse_RepositoryError(t *testing.T) {
 
 	courseService := NewCourseService(courseRepositoryMock, eventBusMock)
 
-	err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
+	_, err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
 
 	courseRepositoryMock.AssertExpectations(t)
 	eventBusMock.AssertExpectations(t)
@@ -45,7 +45,7 @@ func Test_CourseService_CreateCourse_EventsBusError(t *testing.T) {
 
 	courseService := NewCourseService(courseRepositoryMock, eventBusMock)
 
-	err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
+	_, err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
 
 	courseRepositoryMock.AssertExpectations(t)
 	eventBusMock.AssertExpectations(t)
@@ -70,7 +70,7 @@ func Test_CourseService_CreateCourse_Succeed(t *testing.T) {
 
 	courseService := NewCourseService(courseRepositoryMock, eventBusMock)
 
-	err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
+	_, err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
 
 	courseRepositoryMock.AssertExpectations(t)
 	eventBusMock.AssertExpectations(t)
