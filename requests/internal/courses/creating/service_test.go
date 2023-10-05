@@ -3,6 +3,7 @@ package creating
 import (
 	"context"
 	"errors"
+	"fmt"
 	"testing"
 
 	mooc "github.com/diegodhdev/hexagonal-go-api/requests/internal"
@@ -26,7 +27,7 @@ func Test_CourseService_CreateCourse_RepositoryError(t *testing.T) {
 	courseService := NewCourseService(courseRepositoryMock, eventBusMock)
 
 	_, err := courseService.CreateCourse(context.Background(), courseID, courseName, courseDuration)
-
+	fmt.Println(err)
 	courseRepositoryMock.AssertExpectations(t)
 	eventBusMock.AssertExpectations(t)
 	assert.Error(t, err)

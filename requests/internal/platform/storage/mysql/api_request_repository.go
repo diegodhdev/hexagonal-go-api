@@ -24,7 +24,6 @@ func NewApiRequestRepository(db *sql.DB, dbTimeout time.Duration) *ApiRequestRep
 	}
 }
 
-// Save implements the mooc.CourseRepository interface.
 func (r *ApiRequestRepository) Save(ctx context.Context, request mooc.ApiRequest) error {
 	apiRequestSQLStruct := sqlbuilder.NewStruct(new(sqlApiRequest))
 	query, args := apiRequestSQLStruct.InsertInto(sqlApiRequestTable, sqlApiRequest{

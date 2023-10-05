@@ -38,8 +38,10 @@ func (s ApiRequestService) FakeStoryApiApiRequest(ctx context.Context, id string
 		return data, err
 	}
 
+	err = s.apiRequestRepository.Save(ctx, apiRequest)
+
 	if err := s.apiRequestRepository.Save(ctx, apiRequest); err != nil {
-		return err, nil
+		return nil, err
 	}
 
 	channel := make(chan FakeStoryApi)
